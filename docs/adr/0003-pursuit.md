@@ -1,0 +1,2 @@
+# Road-bound pursuit with guaranteed cooling
+Patrols choose intersections on a connected road graph rather than cutting through buildings. Spawning is separated from the courier by at least 300 world units. Sight needs distance and unobstructed line-of-sight; unseen attention decays and a safehouse suppresses pursuit. The graph is simpler than general navigation but produces predictable escape opportunities.

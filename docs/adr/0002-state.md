@@ -1,0 +1,2 @@
+# Vehicle and campaign state
+The courier references a single vehicle ID while occupied; a vehicle has no second occupant field to become inconsistent. Radius colliders resolve movement in bounded substeps, and exit placement searches safe candidates. Sequential job/stage indices and a completion count make reward transitions exactly-once. Saves contain only validated durable progress; recovery rebuilds transient traffic and pursuit so reload cannot preserve a softlock.
