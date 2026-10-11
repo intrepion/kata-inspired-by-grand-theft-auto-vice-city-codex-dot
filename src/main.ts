@@ -64,6 +64,8 @@ function settingsSave() {
 function pause() {
   if (!started) return;
   clear();
+  restartPending = false;
+  element("new-campaign").textContent = "NEW CAMPAIGN";
   game.command("pause");
   element("settings").classList.toggle("hidden", !game.view().paused);
   if (game.view().paused) element("resume").focus();

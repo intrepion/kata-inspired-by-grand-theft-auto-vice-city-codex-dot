@@ -117,6 +117,12 @@ it("driving into an unoccupied parked Comet stops outside its body and causes da
   expect(g.view().cars.find((c) => c.id === "sunbird")!.health).toBeLessThan(
     100,
   );
+  for (let i = 0; i < 120; i++) g.update(1 / 120, { brake: true });
+  g.command("interact");
+  expect(g.view().player.vehicle).toBeNull();
+  expect(
+    g.view().cars.every((car) => distance(car, g.view().player) >= 27),
+  ).toBe(true);
 });
 it("patrols spawn outside a fair radius and escape cannot get stuck at home", () => {
   const g = new Game('{"version":1,"completed":2,"money":1150}');

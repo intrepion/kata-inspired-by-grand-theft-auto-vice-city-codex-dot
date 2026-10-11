@@ -36,3 +36,13 @@ Independent parallel Standards and Spec reviewers used `9e082f6` as baseline. St
 ## Limitations
 
 A short coherent arcade city, not a commercial-scale remake. Top-down geometry, circular colliders, road-node patrols, lane traffic and synthesized audio are intentional. Pedestrians are decorative; no combat or injury. Progress saves only completed jobs and score, so reload abandons the current job safely. Money is a score rather than an economy. Mobile was checked in Chrome emulation; keyboard desktop is the primary play target. Session preview ends on logout/reboot/termination; restart with `npm start`. The repository folder is present, but sidebar project registration has no exposed supported control.
+
+## Final production checks
+
+Production preview was loaded at localhost after the build. Saved campaign state survived reload. Reset confirmation cancellation was verified through visible menu controls: one reset click, leave/reopen settings, unchanged $3,650 and restored New Campaign label. Then the supported two-click reset cleared test progress, settings were restored to sound enabled/reduced motion off, and reload showed a clean first-job welcome with $0. The play tab is retained as a deliverable. Browser logs showed extension warnings but no application-origin errors in the inspected results.
+
+![Waterfront free roam](evidence/marina.jpg)
+
+![Clean start](evidence/clean-start.jpg)
+
+Detailed independent review disposition: [REVIEW.md](REVIEW.md).
