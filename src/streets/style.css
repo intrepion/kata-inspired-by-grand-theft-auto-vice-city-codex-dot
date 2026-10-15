@@ -1,0 +1,381 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f7f2eb;
+  background: #14243a;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  border: 1px solid #ffffff40;
+  background: #17283ecf;
+  border-radius: 5px;
+  padding: 10px 13px;
+}
+button:hover {
+  background: #345169;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #ffdc91;
+  outline-offset: 4px;
+}
+a {
+  color: #f6bbd2;
+  text-underline-offset: 4px;
+}
+canvas {
+  display: block;
+}
+#street-view {
+  width: 100vw;
+  height: 100dvh;
+  outline: none;
+  touch-action: none;
+}
+.street-brand {
+  position: absolute;
+  left: 28px;
+  top: 22px;
+  text-shadow: 0 2px 8px #10213f;
+}
+.street-brand > span {
+  font-size: 22px;
+  letter-spacing: 4px;
+}
+.street-brand b {
+  color: #f4a0bd;
+}
+.street-brand small {
+  display: block;
+  letter-spacing: 2px;
+  font-size: 9px;
+  margin-top: 6px;
+  color: #f7d9cf;
+}
+.street-stats {
+  position: absolute;
+  right: 24px;
+  top: 18px;
+  display: grid;
+  text-align: right;
+  gap: 7px;
+  min-width: 172px;
+  text-shadow: 0 2px 6px #17243f;
+}
+.street-stats > b {
+  font-size: 25px;
+  color: #a3e8cb;
+}
+.street-stats > span {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.street-stats label {
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  letter-spacing: 1px;
+}
+.street-stats meter {
+  width: 94px;
+  height: 10px;
+  accent-color: #f39bb8;
+}
+.street-stats button {
+  justify-self: end;
+  font-size: 10px;
+}
+#stars {
+  color: #ffd58e;
+  font-size: 27px;
+  letter-spacing: 4px;
+}
+.street-cooling {
+  opacity: 0.55;
+}
+.street-mission {
+  position: absolute;
+  left: 28px;
+  bottom: 86px;
+  width: min(365px, 40vw);
+  padding: 17px 20px;
+  background: linear-gradient(110deg, #14263be8, #14263b8a);
+  border-left: 3px solid #f3a3c1;
+  border-radius: 0 10px 10px 0;
+  pointer-events: none;
+}
+.street-mission > small {
+  color: #f5bfce;
+  letter-spacing: 2px;
+  font-size: 9px;
+}
+.street-mission h1 {
+  margin: 8px 0;
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+.street-mission > p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 8px 0;
+}
+.street-mission > b {
+  font-size: 11px;
+  color: #ffdc91;
+}
+.street-message {
+  border-top: 1px solid #ffffff25;
+  padding-top: 9px;
+  color: #cbdbe6;
+  font-size: 11px !important;
+}
+.street-radar {
+  position: absolute;
+  right: 24px;
+  bottom: 86px;
+  width: 204px;
+  border: 1px solid #bbd6d355;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #173249ed;
+}
+.street-radar > div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding: 9px;
+}
+.street-radar canvas {
+  width: 204px;
+  height: 224px;
+}
+.street-radar > small {
+  display: block;
+  padding: 8px 5px;
+  font-size: 8px;
+  color: #ffd782;
+}
+.street-radar > small > span {
+  color: #8ce7f5;
+}
+.street-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px 20px;
+  align-items: center;
+  padding: 16px 20px;
+  background: #102138ee;
+  border-top: 1px solid #8da8c244;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+}
+.street-controls span {
+  white-space: nowrap;
+}
+kbd {
+  font: inherit;
+  font-weight: bold;
+  border: 1px solid #a5b9d15c;
+  padding: 4px 5px;
+  border-radius: 3px;
+  color: #ffcfdf;
+  margin-right: 3px;
+}
+.street-reticle {
+  position: absolute;
+  left: 50%;
+  top: 49%;
+  font-size: 32px;
+  transform: translate(-50%, -50%);
+  color: #fff6df;
+  text-shadow: 0 0 5px #122;
+}
+.street-locked {
+  color: #ffd782;
+}
+.street-speed {
+  position: absolute;
+  right: 250px;
+  bottom: 92px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px #112;
+}
+.street-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #102036a6;
+  backdrop-filter: blur(5px);
+  overflow: auto;
+  padding: 22px;
+}
+.street-overlay section {
+  width: min(610px, 100%);
+  padding: 32px 38px;
+  border: 1px solid #e8b8cc50;
+  background: linear-gradient(145deg, #1e344aee, #18253def);
+  box-shadow: 0 25px 80px #08132288;
+  border-radius: 15px;
+}
+.street-eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #f4acc7;
+}
+.street-overlay h2 {
+  font-size: clamp(43px, 8vh, 78px);
+  letter-spacing: -4px;
+  line-height: 0.95;
+  margin: 24px 0;
+  color: #fff1e9;
+}
+.street-overlay h2 em {
+  color: #f3a1c0;
+  font-style: normal;
+}
+.street-overlay p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d6e1eb;
+}
+.street-primary {
+  display: block;
+  width: 100%;
+  background: #f0a1bf;
+  color: #1b2d43;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 17px;
+  margin: 23px 0 18px;
+  border: none;
+}
+.street-primary:hover {
+  background: #f6b9d0;
+}
+.street-guide p {
+  font-size: 11px;
+  margin: 8px 0;
+  color: #bfcede;
+}
+.street-guide b {
+  color: #f5e4d3;
+}
+.street-overlay a {
+  display: block;
+  font-size: 12px;
+  margin-top: 20px;
+}
+.street-scope {
+  display: block;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #91aabd;
+  margin-top: 14px;
+}
+.street-hidden {
+  display: none !important;
+}
+#retry-street {
+  width: 100%;
+  font-size: 10px;
+}
+#street-pause h2 {
+  font-size: 48px;
+  letter-spacing: -2px;
+}
+@media (max-width: 800px) {
+  .street-brand {
+    left: 15px;
+    top: 16px;
+  }
+  .street-brand > span {
+    font-size: 17px;
+  }
+  .street-brand small {
+    font-size: 7px;
+    max-width: 180px;
+    line-height: 1.6;
+  }
+  .street-stats {
+    right: 12px;
+    min-width: 140px;
+  }
+  .street-stats > b {
+    font-size: 20px;
+  }
+  #stars {
+    font-size: 22px;
+  }
+  .street-mission {
+    left: 12px;
+    bottom: 118px;
+    width: 48vw;
+    padding: 12px;
+  }
+  .street-mission h1 {
+    font-size: 23px;
+  }
+  .street-mission > p {
+    font-size: 11px;
+  }
+  .street-message {
+    font-size: 10px !important;
+  }
+  .street-radar {
+    right: 12px;
+    bottom: 118px;
+    width: 150px;
+  }
+  .street-radar canvas {
+    width: 150px;
+    height: 165px;
+  }
+  .street-radar > div {
+    font-size: 7px;
+  }
+  .street-radar > small {
+    font-size: 6px;
+  }
+  .street-speed {
+    right: 12px;
+    bottom: 92px;
+  }
+  .street-controls {
+    font-size: 8px;
+    gap: 8px;
+    padding: 13px 10px;
+  }
+  .street-overlay section {
+    padding: 24px;
+  }
+  .street-overlay h2 {
+    margin: 18px 0;
+  }
+  .street-guide p {
+    font-size: 10px;
+  }
+}
