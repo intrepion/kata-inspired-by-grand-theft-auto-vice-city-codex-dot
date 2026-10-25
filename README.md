@@ -74,3 +74,7 @@ See [acceptance criteria](docs/SPEC.md), [glossary](CONTEXT.md), [architecture d
 Canvas 2D with raised building roofs, not a 3D engine. A compact 5-by-4 road grid with 12 named buildings, three districts and waterfront dressing, not a AAA city. Traffic follows lanes and patrols follow intersections; AI yields when approaching an occupied stopped car but the driver still needs to avoid traffic. Buildings and parked-car contacts use bounded movement; cars use circles rather than rotated body polygons. Moving AI contacts use a simplified cooldown impact response. Long frame stalls are capped to prevent jumps; losing browser focus pauses. Heat is temporary arcade attention, with line-of-sight cooling and a guaranteed safehouse escape. No combat, injury simulation, interiors, multiplayer, vehicle tuning or licensed radio tracks. Coordinates/speed are arcade scale. Keyboard play is the primary device target; narrow-screen pointer controls and responsive presentation are verified in Chrome emulation, not on physical phones. Saves are browser-local; clearing site data removes them. Audio can be unavailable under browser policy and is optional.
 
 Repository folder is present on this Mac. No supported project/sidebar registration API was available; folder creation does not imply a separate registered sidebar project.
+
+## Play online
+
+[Play the hosted game](https://intrepion.github.io/kata-inspired-by-grand-theft-auto-vice-city-codex-dot/)
