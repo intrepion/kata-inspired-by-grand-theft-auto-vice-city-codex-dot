@@ -5,7 +5,7 @@ import {
   GARAGE,
   HOME,
   TAPE,
-  blocked,
+  cameraFraction,
   blocks,
   covers,
   distance,
@@ -54,21 +54,11 @@ export class StreetRenderer {
       z: view.player.z,
       y: view.player.y + 1.2,
     };
-    let fraction = 1;
-    for (let step = 1; step <= 24; step++) {
-      const amount = step / 24;
-      if (
-        blocked(
-          focus.x - Math.sin(view.cameraYaw) * back * amount,
-          focus.z - Math.cos(view.cameraYaw) * back * amount,
-          0.25,
-          focus.y + rise * amount,
-        )
-      ) {
-        fraction = Math.max(0.16, amount - 0.06);
-        break;
-      }
-    }
+    const fraction = cameraFraction(focus, {
+      x: focus.x - Math.sin(view.cameraYaw) * back,
+      z: focus.z - Math.cos(view.cameraYaw) * back,
+      y: focus.y + rise,
+    });
     this.camera = {
       x: focus.x - Math.sin(view.cameraYaw) * back * fraction,
       z: focus.z - Math.cos(view.cameraYaw) * back * fraction,

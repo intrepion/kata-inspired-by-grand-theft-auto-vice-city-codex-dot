@@ -1,6 +1,7 @@
 import "./style.css";
 import { StreetGame, type StreetInput } from "./game";
 import { StreetRenderer } from "./render";
+import type { createStreetThree } from "./three-view";
 import { distance } from "./world";
 
 const SAVE = "neon-harbor.streets.v1";
@@ -27,6 +28,26 @@ const element = <T extends HTMLElement = HTMLElement>(id: string) =>
   document.getElementById(id)! as T;
 const canvas = element<HTMLCanvasElement>("street-view"),
   map = element<HTMLCanvasElement>("street-map");
+let threeView: ReturnType<typeof createStreetThree> | null = null;
+if (
+  typeof location !== "undefined" &&
+  new URLSearchParams(location.search).get("view") === "three"
+) {
+  void import("./three-view")
+    .then(({ createStreetThree }) => {
+      const threeCanvas = document.createElement("canvas");
+      threeCanvas.id = "street-three";
+      threeCanvas.setAttribute("aria-hidden", "true");
+      threeCanvas.style.cssText =
+        "position:absolute;inset:0;width:100%;height:100%;pointer-events:none";
+      canvas.before(threeCanvas);
+      threeView = createStreetThree(threeCanvas);
+    })
+    .catch((error: unknown) => {
+      console.warn("3D view unavailable; using the original view.", error);
+      document.getElementById("street-three")?.remove();
+    });
+}
 const renderer = new StreetRenderer(canvas),
   keys = new Set<string>(),
   buttons = new Set<number>();
@@ -143,7 +164,11 @@ function frame(now: number) {
     game.look((Number(keys.has("x")) - Number(keys.has("z"))) * dt * 1.8);
   game.update(dt, input);
   const view = game.view();
-  renderer.render(view);
+  if (threeView) {
+    const ctx = canvas.getContext("2d")!;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    threeView.render(view, canvas.clientWidth, canvas.clientHeight);
+  } else renderer.render(view);
   renderer.minimap(map, view);
   hudTime += dt;
   if (hudTime > 0.06) {

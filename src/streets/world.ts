@@ -101,3 +101,52 @@ export function towardNode(from: number, to: number): number {
     ? from + Math.sign(targetCol - col)
     : from + 3 * Math.sign(Math.floor(to / 3) - Math.floor(from / 3));
 }
+
+/** First obstruction on the camera segment, with a small clearance around scenery. */
+export function cameraFraction(
+  focus: Point & { y: number },
+  eye: Point & { y: number },
+): number {
+  let closest = 1;
+  for (const block of [...blocks, ...covers]) {
+    let enter = 0,
+      exit = 1,
+      inside = true;
+    const extents = {
+      x: [block.x - block.w / 2 - 0.25, block.x + block.w / 2 + 0.25],
+      z: [block.z - block.d / 2 - 0.25, block.z + block.d / 2 + 0.25],
+      y: [-0.25, block.h + 0.25],
+    };
+    for (const axis of ["x", "y", "z"] as const) {
+      const [min, max] = extents[axis],
+        start = focus[axis],
+        delta = eye[axis] - start;
+      if (start < min || start > max) inside = false;
+      if (Math.abs(delta) < 1e-9) {
+        if (start < min || start > max) {
+          enter = 2;
+          break;
+        }
+        continue;
+      }
+      const a = (min - start) / delta,
+        b = (max - start) / delta;
+      enter = Math.max(enter, Math.min(a, b));
+      exit = Math.min(exit, Math.max(a, b));
+    }
+    if (!inside && enter <= exit && enter >= 0 && enter < closest)
+      closest = Math.max(0.16, enter - 0.06);
+  }
+  // Keep the camera inside the playable district even when looking outwards.
+  for (const [axis, min, max] of [
+    ["x", BOUNDS.left + 0.25, BOUNDS.right - 0.25],
+    ["z", BOUNDS.bottom + 0.25, BOUNDS.top - 0.25],
+  ] as const) {
+    const delta = eye[axis] - focus[axis];
+    if (delta > 0 && eye[axis] > max)
+      closest = Math.min(closest, Math.max(0.16, (max - focus[axis]) / delta));
+    if (delta < 0 && eye[axis] < min)
+      closest = Math.min(closest, Math.max(0.16, (min - focus[axis]) / delta));
+  }
+  return closest;
+}
