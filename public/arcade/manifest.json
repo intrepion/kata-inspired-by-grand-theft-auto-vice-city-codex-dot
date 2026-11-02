@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "gameId": "kata-inspired-by-grand-theft-auto-vice-city-codex-dot",
   "playUrl": "https://intrepion.github.io/kata-inspired-by-grand-theft-auto-vice-city-codex-dot/",
   "screenshots": [
@@ -12,6 +12,54 @@
         "sourcePath": "docs/evidence/marina.jpg",
         "deployedBuild": null,
         "captureDate": null
+      }
+    },
+    {
+      "path": "arcade/screenshots/ci-20261102-01.jpg",
+      "sha256": "38cd039b73377bacfd850beb06a3f081801de499c6761a9ee69d2bf6eae0fb47",
+      "alt": "Neon Harbor gameplay, view 1",
+      "provenance": {
+        "kind": "ci_gameplay_capture",
+        "sourcePath": "arcade/capture-evidence/ci-20261102-01.png",
+        "sourceSha256": "bb29aa2acb39f0966687d6294ca4f124ebaa9db67ecfc081f794d095bfc964d2",
+        "captureCommit": "c8193e0474b98edae84c2fbb4427a90c21be6845",
+        "workflowRunId": "41439384655",
+        "inputHashes": {
+          "index.html": "0324d5fd16a45cda65108641a72656d144b3425986484bb1dd2ccaec275197a4",
+          "assets/index-C_qWJIhu.js": "8f79f2a2399bc616b034a74f6002eff29737f9f66ee1553873d3f3ae1694a131",
+          "assets/main-BQbRaj_3.css": "efbdea24ca2774b638d6b2979aac91ec50fc0ecc8993c76a4d451d46d72a20b4",
+          "assets/main-BhwaqUF4.js": "d3d41d3200cc4768b83d54fa3008fea997387a66ec4e8d6eba9db7289936a5e0",
+          "assets/main-DUKQLg1k.js": "f38a852c34e6032218e60d3d4ded65fe390fce5d6c1223a41e59dad8fae05561",
+          "assets/main-xdjBn380.css": "520d8da6b44cf4bb7c41413b3bfc87683b6105000c7bd7cbb4811f4cba56fc21",
+          "assets/three-view-CKkPcCyV.js": "eaa8ffd3d2fdc3d58deee39f45a283a8fc996eab89e4ad0fa7c3e39c4d218ddd"
+        },
+        "publishedFilesVerifiedAt": "2026-11-02T19:01:20Z",
+        "captureRecordPath": "arcade/capture-evidence/ci-20261102-record.json",
+        "captureRecordSha256": "e2c7fd098d3bff9c4548c47c16ce6ffd3a326135724a0734005792ae9961334b"
+      }
+    },
+    {
+      "path": "arcade/screenshots/ci-20261102-02.jpg",
+      "sha256": "9d30a93b31614c395c01b86eaacc785e021052748ebfbbf27b3719ce537942f0",
+      "alt": "Neon Harbor gameplay, view 2",
+      "provenance": {
+        "kind": "ci_gameplay_capture",
+        "sourcePath": "arcade/capture-evidence/ci-20261102-02.png",
+        "sourceSha256": "e5180576590c42dbaa34196415e1ba77913caf1aa1ebe7e7ae5cad55152380d5",
+        "captureCommit": "c8193e0474b98edae84c2fbb4427a90c21be6845",
+        "workflowRunId": "41439384655",
+        "inputHashes": {
+          "index.html": "0324d5fd16a45cda65108641a72656d144b3425986484bb1dd2ccaec275197a4",
+          "assets/index-C_qWJIhu.js": "8f79f2a2399bc616b034a74f6002eff29737f9f66ee1553873d3f3ae1694a131",
+          "assets/main-BQbRaj_3.css": "efbdea24ca2774b638d6b2979aac91ec50fc0ecc8993c76a4d451d46d72a20b4",
+          "assets/main-BhwaqUF4.js": "d3d41d3200cc4768b83d54fa3008fea997387a66ec4e8d6eba9db7289936a5e0",
+          "assets/main-DUKQLg1k.js": "f38a852c34e6032218e60d3d4ded65fe390fce5d6c1223a41e59dad8fae05561",
+          "assets/main-xdjBn380.css": "520d8da6b44cf4bb7c41413b3bfc87683b6105000c7bd7cbb4811f4cba56fc21",
+          "assets/three-view-CKkPcCyV.js": "eaa8ffd3d2fdc3d58deee39f45a283a8fc996eab89e4ad0fa7c3e39c4d218ddd"
+        },
+        "publishedFilesVerifiedAt": "2026-11-02T19:01:20Z",
+        "captureRecordPath": "arcade/capture-evidence/ci-20261102-record.json",
+        "captureRecordSha256": "e2c7fd098d3bff9c4548c47c16ce6ffd3a326135724a0734005792ae9961334b"
       }
     }
   ]
