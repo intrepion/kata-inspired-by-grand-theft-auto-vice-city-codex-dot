@@ -82,3 +82,7 @@ Repository folder is present on this Mac. No supported project/sidebar registrat
 An experimental Three.js street view is available at `?view=three`. It uses the existing mission simulation, controls, radar and save; the original renderer stays the default pending browser playtesting. Three.js 0.180.0 is bundled under its MIT license.
 
 The experimental view shows enemy-health blocks and the selected target but does not yet reproduce the original view’s floating location labels. Use the default view for the complete visual feedback.
+
+## Arcade metadata
+
+See [docs/arcade-metadata.md](docs/arcade-metadata.md) for the game-owned manifest and screenshot provenance.

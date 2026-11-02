@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "gameId": "kata-inspired-by-grand-theft-auto-vice-city-codex-dot",
+  "playUrl": "https://intrepion.github.io/kata-inspired-by-grand-theft-auto-vice-city-codex-dot/",
+  "screenshots": [
+    {
+      "path": "arcade/screenshots/view-01.jpg",
+      "sha256": "f8929ed77eb00ee4df873a635e8af90a1c5bdaa5355648fb3bb07cf2e2ca379e",
+      "alt": "Gameplay capture 1",
+      "provenance": {
+        "kind": "existing_repository_capture",
+        "sourcePath": "docs/evidence/marina.jpg",
+        "deployedBuild": null,
+        "captureDate": null
+      }
+    }
+  ]
+}
