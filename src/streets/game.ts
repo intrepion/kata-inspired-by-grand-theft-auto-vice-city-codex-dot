@@ -34,13 +34,7 @@ export type Vehicle = Point & {
 };
 export type Enemy = Point & { id: number; health: number; cooldown: number };
 export type Phase =
-  | "contact"
-  | "fight"
-  | "tape"
-  | "escape"
-  | "return"
-  | "complete"
-  | "failed";
+  "contact" | "fight" | "tape" | "escape" | "return" | "complete" | "failed";
 export type StreetView = {
   player: Point & { y: number; yaw: number; vehicle: string | null };
   cars: Vehicle[];
@@ -360,7 +354,7 @@ export class StreetGame {
       forward: axis(input.forward),
       side: axis(input.side),
     };
-    for (let remaining = duration; remaining > 0.00001; ) {
+    for (let remaining = duration; remaining > 0.00001;) {
       const dt = Math.min(remaining, 1 / 60);
       remaining -= dt;
       this.tick(dt, controls);
